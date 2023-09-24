@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { AiOutlineDollar } from "react-icons/ai";
+import { Link } from "react-router-dom";
 const FeatureJob = ({ job }) => {
-  const { logo, job_title, company_name, location, salary } = job;
-  console.log(job);
+  const { id, logo, job_title, company_name, location, salary } = job;
+  // console.log(job);
   return (
     <div className=" border border-blue-400 p-4 rounded-sm shadow-md">
       <img src={logo} alt="" />
@@ -25,7 +26,11 @@ const FeatureJob = ({ job }) => {
           <AiOutlineDollar className="text-2xl"></AiOutlineDollar> {salary}
         </h2>
       </div>
-      <button className="bg-blue-400 rounded-md px-1 py-2">View Details</button>
+      <Link to={`/job/${id}`}>
+        <button className="bg-blue-400 rounded-md px-1 py-2">
+          View Details
+        </button>
+      </Link>
     </div>
   );
 };

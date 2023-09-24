@@ -9,7 +9,6 @@ const JobCatagories = () => {
       .then((response) => response.json())
       .then((data) => setJobCategories(data));
   }, []);
-  console.log(jobCategories);
   return (
     <div>
       <div className="text-center my-10">
